@@ -23,8 +23,12 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="hero-mobile.png" class="hero-img mobile" alt="AmytistShop">
-  <img src="hero-desktop.png" class="hero-img desktop" alt="AmytistShop">
+  <picture>
+    <!-- ПК -->
+    <source srcset="hero-desktop.png" media="(min-width: 768px)">
+    <!-- Телефон -->
+    <img src="hero-mobile.png" alt="AmytistShop" class="hero-img">
+  </picture>
 </section>
 
 <div class="divider"></div>
@@ -134,3 +138,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
