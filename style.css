@@ -209,6 +209,12 @@ body {
     font-size: 30px;
   }
 }
+@media (min-width: 1024px) {
+  .divider {
+    width: 1100px;   /* ПК — длиннее */
+    max-width: 1100px;
+  }
+}
 
 
 
