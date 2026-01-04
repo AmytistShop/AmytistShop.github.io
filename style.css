@@ -91,7 +91,8 @@ body {
 /* ===== DIVIDER ===== */
 .divider {
   height: 4px;
-  width: 720px;
+  width: 70vw;          /* телефон */
+  max-width: 360px;     /* защита от растяжения */
   margin: 40px auto;
   background: linear-gradient(90deg, #00eaff, #d400ff);
   border-radius: 10px;
@@ -193,7 +194,7 @@ body {
 }
 
 /* ===== DESKTOP ===== */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .hero {
     padding: 0 24px;
     max-width: 1200px;
@@ -208,13 +209,9 @@ body {
   .section h2 {
     font-size: 30px;
   }
-}
-@media (min-width: 1024px) {
+
   .divider {
-    width: 1100px;   /* ПК — длиннее */
+    width: 1100px;
     max-width: 1100px;
   }
 }
-
-
-
