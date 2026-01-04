@@ -127,4 +127,14 @@ body {
     height: 320px;
   }
 }
+body {
+  min-width: 320px;
+}
+
+.section, .hero {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
