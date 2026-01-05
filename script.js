@@ -1,14 +1,14 @@
-const menuBtn = document.getElementById("menuBtn");
-const sideMenu = document.getElementById("sideMenu");
+const reveals = document.querySelectorAll(".reveal");
 
-menuBtn.onclick = () => {
-  sideMenu.style.right =
-    sideMenu.style.right === "0px" ? "-220px" : "0px";
-};
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
 
-document.querySelectorAll(".faq-question").forEach(q => {
-  q.onclick = () => {
-    const ans = q.nextElementSibling;
-    ans.style.display = ans.style.display === "block" ? "none" : "block";
-  };
-});
+reveals.forEach(el => observer.observe(el));
