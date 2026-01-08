@@ -9,7 +9,7 @@ body {
   color: #fff;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   position: fixed;
   top: 0;
@@ -26,7 +26,7 @@ body {
   cursor: pointer;
 }
 
-/* MENU */
+/* ================= MENU ================= */
 .side-menu {
   position: fixed;
   right: -220px;
@@ -45,7 +45,7 @@ body {
   text-decoration: none;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
   margin-top: 80px;
   height: 240px;
@@ -60,12 +60,10 @@ body {
   background: linear-gradient(90deg,#00eaff,#d400ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   text-shadow:
     0 0 10px rgba(0,234,255,0.6),
     0 0 20px rgba(212,0,255,0.4),
     0 0 40px rgba(212,0,255,0.2);
-
   animation: glow 2.5s ease-in-out infinite alternate;
 }
 
@@ -79,10 +77,7 @@ body {
   51%,100% { opacity: 0; }
 }
 
-/* ===================== */
-/* DIVIDER — ИСПРАВЛЕНО */
-/* ===================== */
-
+/* ================= DIVIDER ================= */
 .divider {
   height: 4px;
   margin: 40px auto;
@@ -94,18 +89,20 @@ body {
 /* ПК */
 @media (min-width: 768px) {
   .divider {
-    width: 480px;
+    width: 60vw;
+    max-width: 900px;
   }
 }
 
 /* большие экраны */
 @media (min-width: 1400px) {
   .divider {
-    width: 640px;
+    width: 70vw;
+    max-width: 1100px;
   }
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 .section {
   padding: 20px;
   text-align: center;
@@ -143,7 +140,7 @@ body {
   font-weight: bold;
 }
 
-/* FAQ */
+/* ================= FAQ ================= */
 .faq-item {
   background: rgba(20,10,50,0.7);
   margin-bottom: 10px;
@@ -163,14 +160,14 @@ body {
   color: #bbb;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer {
   text-align: center;
   padding: 20px;
   opacity: 0.6;
 }
 
-/* GLOW ANIMATION */
+/* ================= GLOW ================= */
 @keyframes glow {
   from {
     text-shadow:
