@@ -1,4 +1,4 @@
-// MENU
+// ================= MENU =================
 const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
 const menuLinks = sideMenu.querySelectorAll("a");
@@ -15,7 +15,8 @@ menuLinks.forEach(link => {
   };
 });
 
-// FAQ
+
+// ================= FAQ =================
 document.querySelectorAll(".faq-question").forEach(q => {
   q.onclick = () => {
     const ans = q.nextElementSibling;
@@ -31,7 +32,8 @@ document.querySelectorAll(".faq-question").forEach(q => {
   };
 });
 
-// TYPE EFFECT
+
+// ================= TYPE EFFECT =================
 const text = "AmytistShop";
 const el = document.getElementById("typeText");
 let i = 0;
@@ -43,9 +45,45 @@ function type() {
     setTimeout(type, 120);
   }
 }
-
 type();
 
-;
 
+// ================= PRODUCT SEARCH =================
+const searchInput = document.getElementById("globalSearch");
+const searchBtn = document.getElementById("searchBtn");
+const clearBtn = document.getElementById("clearSearch");
+const productCards = document.querySelectorAll("#products .card");
 
+function runSearch() {
+  const value = searchInput.value.trim().toLowerCase();
+
+  productCards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(value) ? "block" : "none";
+  });
+}
+
+// поиск по кнопке 🔍
+searchBtn.onclick = runSearch;
+
+// поиск по Enter
+searchInput.addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    runSearch();
+  }
+});
+
+// показать / скрыть крестик
+searchInput.addEventListener("input", () => {
+  clearBtn.style.display = searchInput.value ? "block" : "none";
+});
+
+// очистка ❌
+clearBtn.onclick = () => {
+  searchInput.value = "";
+  clearBtn.style.display = "none";
+
+  productCards.forEach(card => {
+    card.style.display = "block";
+  });
+};
