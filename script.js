@@ -1,11 +1,19 @@
 // MENU
 const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
+const menuLinks = sideMenu.querySelectorAll("a");
 
 menuBtn.onclick = () => {
   sideMenu.style.right =
     sideMenu.style.right === "0px" ? "-220px" : "0px";
 };
+
+// закрытие меню при клике на пункт
+menuLinks.forEach(link => {
+  link.onclick = () => {
+    sideMenu.style.right = "-220px";
+  };
+});
 
 // FAQ
 document.querySelectorAll(".faq-question").forEach(q => {
