@@ -7,7 +7,6 @@ body {
   color: #fff;
 }
 
-/* HEADER */
 .header {
   position: fixed;
   top: 0;
@@ -19,12 +18,8 @@ body {
   z-index: 100;
 }
 
-.menu-btn {
-  font-size: 22px;
-  cursor: pointer;
-}
+.menu-btn { font-size: 22px; cursor: pointer; }
 
-/* MENU */
 .side-menu {
   position: fixed;
   right: -220px;
@@ -34,7 +29,6 @@ body {
   background: #060014;
   padding: 80px 20px;
   transition: 0.3s;
-  z-index: 200;
 }
 
 .side-menu a {
@@ -44,43 +38,40 @@ body {
   text-decoration: none;
 }
 
-/* HERO */
 .hero {
-  margin-top: 90px;
-  text-align: center;
+  margin-top: 80px;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-title {
-  display: inline-flex;
+.hero-inner {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .hero h1 {
   font-size: clamp(42px, 8vw, 96px);
-  font-weight: 900;
   background: linear-gradient(90deg,#00eaff,#d400ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.cursor {
-  font-size: clamp(42px, 8vw, 96px);
-  animation: blink 1s infinite;
-}
+.cursor { animation: blink 1s infinite; }
 
 @keyframes blink {
-  0%,50% {opacity:1;}
-  51%,100% {opacity:0;}
+  0%,50%{opacity:1;} 51%,100%{opacity:0;}
 }
 
-/* SEARCH */
 .hero-search {
-  margin: 25px auto 0;
+  margin-top: 26px;
   width: 90%;
   max-width: 420px;
   background: rgba(255,255,255,0.08);
   border-radius: 16px;
-  padding: 12px 16px;
+  padding: 12px;
   position: relative;
 }
 
@@ -88,39 +79,41 @@ body {
   width: 100%;
   background: transparent;
   border: none;
-  outline: none;
   color: #ddd;
+  outline: none;
 }
 
-.search-btn {
+.search-clear {
   position: absolute;
   right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 12px;
   cursor: pointer;
+  opacity: .5;
 }
 
 .search-results {
   display: none;
-  margin-top: 10px;
-  background: #070014;
+  position: absolute;
+  top: 110%;
+  width: 100%;
+  background: #0b0220;
   border-radius: 14px;
 }
 
 .search-item {
-  padding: 10px;
   display: flex;
-  align-items: center;
   gap: 10px;
+  padding: 10px;
   cursor: pointer;
 }
+
+.search-item:hover { background: rgba(255,255,255,.05); }
 
 .search-item img {
   width: 40px;
   border-radius: 8px;
 }
 
-/* DIVIDER */
 .divider {
   height: 4px;
   margin: 40px auto;
@@ -129,28 +122,13 @@ body {
   border-radius: 10px;
 }
 
-@media (min-width: 768px) {
-  .divider {
-    width: 60vw;
-    max-width: 900px;
-  }
-}
+.section { text-align: center; padding: 20px; }
 
-/* SECTIONS */
-.section {
-  padding: 20px;
-  text-align: center;
-  max-width: 1200px;
-  margin: auto;
-}
+.cards { display: grid; gap: 20px; }
 
-.cards {
-  display: grid;
-  gap: 20px;
-}
-
-@media (min-width: 768px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
+@media(min-width:768px){
+  .cards{ grid-template-columns: repeat(2,1fr); }
+  .divider{ width:60vw; max-width:900px; }
 }
 
 .card {
@@ -159,51 +137,32 @@ body {
   border-radius: 20px;
 }
 
-.product-img {
-  width: 100%;
-  max-height: 180px;
-  object-fit: contain;
-  border-radius: 12px;
+.buy {
+  background: linear-gradient(135deg,#8f00ff,#5b00c7);
+  color:#fff;
+  border:none;
+  padding:12px 20px;
+  border-radius:14px;
+  cursor:pointer;
 }
 
-.features {
-  list-style: none;
-  padding: 0;
-  text-align: left;
+.faq-question {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
 }
 
-.features li {
-  padding-left: 26px;
-  position: relative;
-}
+.faq-question span { margin-left:auto; }
 
+.footer { text-align:center; opacity:.6; }
+
+.product-img { width:100%; max-height:180px; object-fit:contain; }
+
+.features { list-style:none; padding:0; text-align:left; }
 .features li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #00eaff;
-}
-
-/* FAQ */
-.faq-item {
-  background: rgba(20,10,50,0.7);
-  margin-bottom: 10px;
-  border-radius: 14px;
-  padding: 15px;
-}
-
-.faq-answer { display: none; }
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 20px;
-  opacity: 0.6;
-}
-
-/* FreeKassa */
-.fk-banner {
-  text-align: center;
-  opacity: 0.25;
+  content:"✔";
+  margin-right:8px;
+  color:#00eaff;
 }
 
