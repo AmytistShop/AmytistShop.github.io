@@ -2,10 +2,11 @@
 const text = "AmytistShop";
 const el = document.getElementById("typeText");
 let i = 0;
-(function type(){
-  if(i < text.length){
+
+(function type() {
+  if (i < text.length) {
     el.textContent += text[i++];
-    setTimeout(type,120);
+    setTimeout(type, 120);
   }
 })();
 
@@ -18,13 +19,13 @@ menuBtn.onclick = () => {
     sideMenu.style.right === "0px" ? "-220px" : "0px";
 };
 
-document.querySelectorAll("#sideMenu a").forEach(link=>{
+document.querySelectorAll("#sideMenu a").forEach(link => {
   link.onclick = () => sideMenu.style.right = "-220px";
 });
 
 // FAQ
-document.querySelectorAll(".faq-question").forEach(q=>{
-  q.onclick = ()=>{
+document.querySelectorAll(".faq-question").forEach(q => {
+  q.onclick = () => {
     const a = q.nextElementSibling;
     const s = q.querySelector("span");
     const open = a.style.display === "block";
@@ -33,27 +34,43 @@ document.querySelectorAll(".faq-question").forEach(q=>{
   };
 });
 
-// SEARCH realtime
+// SEARCH realtime (ПК + телефон)
 const input = document.getElementById("searchInput");
 const results = document.getElementById("searchResults");
 const products = document.querySelectorAll(".product");
 
-input.addEventListener("input", ()=>{
-  const v = input.value.toLowerCase();
+input.addEventListener("input", () => {
+  const val = input.value.toLowerCase();
   results.innerHTML = "";
-  if(!v){ results.style.display="none"; return; }
 
-  products.forEach(p=>{
-    if(p.dataset.name.toLowerCase().includes(v)){
-      const d = document.createElement("div");
-      d.className = "search-item";
-      d.textContent = p.dataset.name;
-      d.onclick = ()=> p.scrollIntoView({behavior:"smooth"});
-      results.appendChild(d);
+  if (!val) {
+    results.style.display = "none";
+    return;
+  }
+
+  products.forEach(p => {
+    if (p.dataset.name.toLowerCase().includes(val)) {
+      const item = document.createElement("div");
+      item.className = "search-item";
+
+      if (p.dataset.img) {
+        const img = document.createElement("img");
+        img.src = p.dataset.img;
+        item.appendChild(img);
+      }
+
+      const text = document.createElement("span");
+      text.textContent = p.dataset.name;
+      item.appendChild(text);
+
+      item.onclick = () => {
+        p.scrollIntoView({ behavior: "smooth" });
+        results.style.display = "none";
+      };
+
+      results.appendChild(item);
     }
   });
 
   results.style.display = results.children.length ? "block" : "none";
 });
-
-
