@@ -46,3 +46,16 @@ function type() {
 
 type();
 
+// GLOBAL SEARCH (HERO)
+const globalSearch = document.getElementById("globalSearch");
+const productCards = document.querySelectorAll("#products .card");
+
+globalSearch.addEventListener("input", () => {
+  const value = globalSearch.value.toLowerCase();
+
+  productCards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(value) ? "block" : "none";
+  });
+});
+
