@@ -1,98 +1,53 @@
-document.addEventListener("DOMContentLoaded", () => {
+// TYPE EFFECT
+const text = "AmytistShop";
+const el = document.getElementById("typeText");
+let i = 0;
+(function type(){
+  if(i<text.length){ el.textContent+=text[i++]; setTimeout(type,120); }
+})();
 
-  // ================= MENU =================
-  const menuBtn = document.getElementById("menuBtn");
-  const sideMenu = document.getElementById("sideMenu");
-  const menuLinks = sideMenu?.querySelectorAll("a") || [];
+// SEARCH AUTOCOMPLETE
+const input = document.getElementById("searchInput");
+const clear = document.getElementById("searchClear");
+const results = document.getElementById("searchResults");
 
-  if (menuBtn && sideMenu) {
-    menuBtn.onclick = () => {
-      sideMenu.style.right =
-        sideMenu.style.right === "0px" ? "-220px" : "0px";
-    };
+const products = [
+  {
+    name: "Minecraft Bedrock Edition Windows 10/11",
+    img: "Minecraft-bed.png",
+    target: "product-minecraft"
+  },
+  {
+    name: "Читы на Grand Mobile",
+    img: "",
+    target: "product-grand"
   }
+];
 
-  menuLinks.forEach(link => {
-    link.onclick = () => {
-      sideMenu.style.right = "-220px";
-    };
-  });
+input.oninput = () => {
+  const val = input.value.toLowerCase();
+  results.innerHTML = "";
+  if (!val) { results.style.display = "none"; return; }
 
-
-  // ================= FAQ =================
-  document.querySelectorAll(".faq-question").forEach(q => {
-    q.onclick = () => {
-      const ans = q.nextElementSibling;
-      const icon = q.querySelector("span");
-
-      if (ans.style.display === "block") {
-        ans.style.display = "none";
-        icon.textContent = "➕";
-      } else {
-        ans.style.display = "block";
-        icon.textContent = "➖";
-      }
-    };
-  });
-
-
-  // ================= TYPE EFFECT =================
-  const text = "AmytistShop";
-  const el = document.getElementById("typeText");
-
-  if (el) {
-    let i = 0;
-    el.textContent = "";
-
-    function type() {
-      if (i < text.length) {
-        el.textContent += text[i];
-        i++;
-        setTimeout(type, 120);
-      }
-    }
-
-    type();
-  }
-
-
-  // ================= PRODUCT SEARCH =================
-  const searchInput = document.getElementById("globalSearch");
-  const searchBtn = document.getElementById("searchBtn");
-  const clearBtn = document.getElementById("clearSearch");
-  const productCards = document.querySelectorAll("#products .card");
-
-  function runSearch() {
-    const value = searchInput.value.trim().toLowerCase();
-
-    productCards.forEach(card => {
-      const text = card.textContent.toLowerCase();
-      card.style.display = text.includes(value) ? "block" : "none";
-    });
-  }
-
-  if (searchBtn) searchBtn.onclick = runSearch;
-
-  if (searchInput) {
-    searchInput.addEventListener("keydown", e => {
-      if (e.key === "Enter") runSearch();
+  products
+    .filter(p => p.name.toLowerCase().includes(val))
+    .forEach(p => {
+      const div = document.createElement("div");
+      div.className = "search-item";
+      div.innerHTML = `${p.img ? `<img src="${p.img}">` : ""}<span>${p.name}</span>`;
+      div.onclick = () => {
+        document.getElementById(p.target).scrollIntoView({behavior:"smooth"});
+        results.style.display = "none";
+      };
+      results.appendChild(div);
     });
 
-    searchInput.addEventListener("input", () => {
-      if (clearBtn) {
-        clearBtn.style.display = searchInput.value ? "block" : "none";
-      }
-    });
-  }
+  results.style.display = "block";
+};
 
-  if (clearBtn) {
-    clearBtn.onclick = () => {
-      searchInput.value = "";
-      clearBtn.style.display = "none";
-      productCards.forEach(card => card.style.display = "block");
-    };
-  }
-
-});
+clear.onclick = () => {
+  input.value = "";
+  results.style.display = "none";
+};
 
 
