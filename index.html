@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -8,13 +8,11 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="logo">🏆 AmytistShop</div>
   <div class="menu-btn" id="menuBtn">☰</div>
 </header>
 
-<!-- SIDE MENU -->
 <nav class="side-menu" id="sideMenu">
   <a href="#about">О нас</a>
   <a href="#why">Почему мы</a>
@@ -25,20 +23,21 @@
 
 <!-- HERO -->
 <section class="hero">
-  <h1 id="typeText"></h1>
-  <div class="cursor">|</div>
-</section>
+  <div class="hero-inner">
+    <h1 id="typeText"></h1>
+    <div class="cursor">|</div>
 
-<!-- SEARCH -->
-<div class="hero-search">
-  <input type="text" id="globalSearch" placeholder="Введите название товара">
-  <span class="clear-search" id="clearSearch">✕</span>
-  <button id="searchBtn">🔍</button>
-</div>
+    <!-- ПОИСК -->
+    <div class="hero-search">
+      <input type="text" id="searchInput" placeholder="Поиск товара">
+      <span class="search-clear" id="searchClear">✕</span>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+</section>
 
 <div class="divider"></div>
 
-<!-- О НАС -->
 <section class="section" id="about">
   <p class="center-text">
     <b>AmytistShop</b> — маркетплэйс игровых товаров.<br>
@@ -48,10 +47,8 @@
 
 <div class="divider"></div>
 
-<!-- ПОЧЕМУ МЫ -->
 <section class="section" id="why">
   <h2>Почему нас выбирают</h2>
-
   <div class="cards">
     <div class="card">
       <h3>Надежность</h3>
@@ -61,7 +58,6 @@
         Фиксированные цены.
       </p>
     </div>
-
     <div class="card">
       <h3>Поддержка</h3>
       <p>
@@ -75,52 +71,46 @@
 
 <div class="divider"></div>
 
-<!-- ОТЗЫВЫ -->
 <section class="section" id="reviews">
   <h2>Отзывы</h2>
-
   <div class="cards">
     <div class="card">
       <b>Александр</b>
-      <p>Отличный магазин, всё пришло быстро!</p>
+      <p>ййййййййййййййййййййййййййййй</p>
     </div>
-
     <div class="card">
-      <b>Илья</b>
-      <p>Поддержка отвечает, товар рабочий.</p>
+      <b>Александр</b>
+      <p>ййййййййййййййййййййййййййййй</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ТОВАРЫ -->
 <section class="section" id="products">
   <h2>Товары</h2>
 
   <div class="cards">
 
-    <div class="card product">
+    <div class="card product-card" id="product-grand">
       <h3>Читы на Grand Mobile</h3>
       <p>
-        Обновляемые версии<br>
-        Простая установка<br>
-        Поддержка
+        ййййййййййййй<br>
+        ййййййййййййй<br>
+        ййййййййййййй
       </p>
       <div class="price">200 ₽</div>
       <button class="buy">Купить</button>
     </div>
 
-    <div class="card product">
-      <img src="Minecraft-bed.png" alt="Minecraft Bedrock Edition" class="product-img">
+    <div class="card product-card" id="product-minecraft">
+      <img src="Minecraft-bed.png" class="product-img">
       <h3>Minecraft Bedrock Edition Windows 10/11</h3>
-
       <ul class="features">
         <li>Полная версия игры</li>
         <li>Работает на Windows 10 / 11</li>
         <li>Мгновенная доставка</li>
       </ul>
-
       <div class="price">200 ₽</div>
       <button class="buy">Купить</button>
     </div>
@@ -130,34 +120,21 @@
 
 <div class="divider"></div>
 
-<!-- FAQ -->
 <section class="section" id="faq">
   <h2>FAQ — часто задаваемые вопросы</h2>
 
   <div class="faq-item">
-    <div class="faq-question">Как происходит покупка? <span>➕</span></div>
-    <div class="faq-answer">После оплаты вы получаете файл или ключ.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">Есть ли поддержка? <span>➕</span></div>
-    <div class="faq-answer">Да, мы всегда на связи.</div>
+    <div class="faq-question">test <span>➕</span></div>
+    <div class="faq-answer">1234567890</div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   © 2026 AmytistShop
 </footer>
 
-<!-- FreeKassa -->
-<div class="fk-banner">
-  <a href="https://freekassa.net" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn.freekassa.net/banners/big-dark-1.png"
-         title="Прием платежей на сайте для физических лиц">
-  </a>
-</div>
-
 <script src="script.js"></script>
 </body>
 </html>
+
+
