@@ -29,63 +29,42 @@
 <!-- ПОИСК -->
 <div class="search-wrap">
   <input type="text" id="searchInput" placeholder="Поиск товара...">
-  <span class="search-icon">🔍</span>
+  <div class="search-results" id="searchResults"></div>
 </div>
 
 <div class="divider"></div>
 
-<!-- О НАС -->
 <section class="section" id="about">
-  <p>
-    <b>AmytistShop</b> — маркетплэйс игровых товаров.<br>
-    Наш приоритет — просто, быстро, безопасно.
-  </p>
+  <p><b>AmytistShop</b> — маркетплэйс игровых товаров.<br>
+  Наш приоритет — просто, быстро, безопасно.</p>
 </section>
 
 <div class="divider"></div>
 
-<!-- ПОЧЕМУ МЫ -->
 <section class="section" id="why">
   <h2>Почему нас выбирают</h2>
   <div class="cards">
     <div class="card">
       <h3>Надежность</h3>
-      <p>Безопасные файлы без вирусов.<br>Актуальные обновления.<br>Фиксированные цены.</p>
+      <p>Безопасные файлы<br>Актуальные обновления<br>Фиксированные цены</p>
     </div>
     <div class="card">
       <h3>Поддержка</h3>
-      <p>Поддержка на всех этапах.<br>Подробные инструкции.<br>Решение багов.</p>
+      <p>Поддержка на всех этапах<br>Подробные инструкции<br>Решение багов</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ОТЗЫВЫ -->
-<section class="section" id="reviews">
-  <h2>Отзывы</h2>
-  <div class="cards">
-    <div class="card"><b>Александр</b><p>ййййййййййй</p></div>
-    <div class="card"><b>Александр</b><p>ййййййййййй</p></div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ТОВАРЫ -->
 <section class="section" id="products">
   <h2>Товары</h2>
 
-  <div class="cards" id="productList">
+  <div class="cards">
 
-    <div class="card product" data-name="Grand Mobile">
-      <h3>Читы на Grand Mobile</h3>
-      <p>ййййййййййй<br>ййййййййййй<br>ййййййййййй</p>
-      <div class="price">200 ₽</div>
-      <button class="buy">Купить</button>
-    </div>
-
-    <div class="card product" data-name="Minecraft Bedrock">
+    <div class="card product"
+         data-name="Minecraft Bedrock Edition"
+         data-img="Minecraft-bed.png">
       <img src="Minecraft-bed.png" class="product-img">
       <h3>Minecraft Bedrock Edition Windows 10/11</h3>
       <ul class="features">
@@ -97,12 +76,20 @@
       <button class="buy">Купить</button>
     </div>
 
+    <div class="card product"
+         data-name="Читы Grand Mobile"
+         data-img="">
+      <h3>Читы на Grand Mobile</h3>
+      <p>йййййййй<br>йййййййй<br>йййййййй</p>
+      <div class="price">200 ₽</div>
+      <button class="buy">Купить</button>
+    </div>
+
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- FAQ -->
 <section class="section" id="faq">
   <h2>FAQ</h2>
 
@@ -110,10 +97,12 @@
     <div class="faq-question">test <span>➕</span></div>
     <div class="faq-answer">123</div>
   </div>
+
   <div class="faq-item">
     <div class="faq-question">test <span>➕</span></div>
     <div class="faq-answer">123</div>
   </div>
+
   <div class="faq-item">
     <div class="faq-question">test <span>➕</span></div>
     <div class="faq-answer">123</div>
@@ -125,6 +114,5 @@
 <script src="script.js"></script>
 </body>
 </html>
-
 
 
