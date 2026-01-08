@@ -60,6 +60,14 @@ body {
   background: linear-gradient(90deg,#00eaff,#d400ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  /* НЕОНОВОЕ СВЕЧЕНИЕ */
+  text-shadow:
+    0 0 10px rgba(0,234,255,0.6),
+    0 0 20px rgba(212,0,255,0.4),
+    0 0 40px rgba(212,0,255,0.2);
+
+  animation: glow 2.5s ease-in-out infinite alternate;
 }
 
 .cursor {
@@ -145,4 +153,5 @@ body {
   padding: 20px;
   opacity: 0.6;
 }
+
 
