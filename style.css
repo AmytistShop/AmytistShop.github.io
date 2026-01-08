@@ -191,7 +191,7 @@ body {
   list-style: none;
   padding: 0;
   text-align: left;
-  margin-left: 18px; /* ← СДВИГ ВСЕХ 3 СТРОК ВПРАВО */
+  margin-left: 22px; /* ← СДВИГ ВСЕХ 3 СТРОК ВПРАВО */
 }
 
 .features li {
@@ -225,4 +225,5 @@ body {
   border-color: #00eaff;
   box-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
 }
+
 
