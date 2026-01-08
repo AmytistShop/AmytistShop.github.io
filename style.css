@@ -156,7 +156,12 @@ body {
   margin-bottom: 12px;
 }
 
-.price { font-size: 22px; color: #9b7cff; }
+/* 🔹 ЦЕНА — СДВИНУТА ЧУТЬ ВВЕРХ */
+.price {
+  font-size: 22px;
+  color: #9b7cff;
+  margin-top: -6px; /* ← ВОТ ЭТО */
+}
 
 .buy {
   padding: 12px 20px;
@@ -186,6 +191,7 @@ body {
   list-style: none;
   padding: 0;
   text-align: left;
+  margin-left: 12px; /* ← СДВИГ ВСЕХ 3 СТРОК ВПРАВО */
 }
 
 .features li {
@@ -207,15 +213,15 @@ body {
   padding: 20px;
   opacity: 0.6;
 }
+
+/* SEARCH BORDER */
 #searchInput {
-  border: 2px solid rgba(255, 255, 255, 0.25); /* обводка */
+  border: 2px solid rgba(255, 255, 255, 0.25);
   outline: none;
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* при фокусе (когда кликаешь) */
 #searchInput:focus {
   border-color: #00eaff;
   box-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
 }
-
