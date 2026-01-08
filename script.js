@@ -12,28 +12,24 @@ document.querySelectorAll(".faq-question").forEach(q => {
   q.onclick = () => {
     const ans = q.nextElementSibling;
     const icon = q.querySelector("span");
+    const open = ans.style.display === "block";
 
-    if (ans.style.display === "block") {
-      ans.style.display = "none";
-      icon.textContent = "➕";
-    } else {
-      ans.style.display = "block";
-      icon.textContent = "➖";
-    }
+    ans.style.display = open ? "none" : "block";
+    icon.textContent = open ? "➕" : "➖";
   };
 });
 
-// TYPE ANIMATION
+// TYPE EFFECT
 const text = "AmytistShop";
-const target = document.getElementById("typeText");
+const el = document.getElementById("typeText");
 let i = 0;
 
-function typeEffect() {
+function type() {
   if (i < text.length) {
-    target.textContent += text.charAt(i);
+    el.textContent += text[i];
     i++;
-    setTimeout(typeEffect, 120);
+    setTimeout(type, 120);
   }
 }
 
-typeEffect();
+type();
