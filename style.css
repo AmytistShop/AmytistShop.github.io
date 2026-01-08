@@ -207,4 +207,15 @@ body {
   padding: 20px;
   opacity: 0.6;
 }
+#searchInput {
+  border: 2px solid rgba(255, 255, 255, 0.25); /* обводка */
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* при фокусе (когда кликаешь) */
+#searchInput:focus {
+  border-color: #00eaff;
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+}
 
