@@ -8,7 +8,7 @@ menuBtn.onclick = () => {
     sideMenu.style.right === "0px" ? "-220px" : "0px";
 };
 
-// закрытие меню при клике на пункт
+// закрытие меню при клике
 menuLinks.forEach(link => {
   link.onclick = () => {
     sideMenu.style.right = "-220px";
@@ -45,3 +45,4 @@ function type() {
 }
 
 type();
+
