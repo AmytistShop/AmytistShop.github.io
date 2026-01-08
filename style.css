@@ -7,6 +7,7 @@ body {
   color: #fff;
 }
 
+/* HEADER */
 .header {
   position: fixed;
   top: 0;
@@ -20,6 +21,7 @@ body {
 
 .menu-btn { font-size: 22px; cursor: pointer; }
 
+/* MENU */
 .side-menu {
   position: fixed;
   right: -220px;
@@ -30,139 +32,113 @@ body {
   padding: 80px 20px;
   transition: 0.3s;
 }
+.side-menu a { display:block; margin-bottom:20px; color:#aaa; }
 
-.side-menu a {
-  display: block;
-  margin-bottom: 20px;
-  color: #aaa;
-  text-decoration: none;
-}
-
+/* HERO */
 .hero {
-  margin-top: 80px;
-  height: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 90px;
+  height: 200px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.hero-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: clamp(42px, 8vw, 96px);
+.typing {
+  font-size: clamp(42px,8vw,96px);
+  font-weight: 900;
   background: linear-gradient(90deg,#00eaff,#d400ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.cursor { animation: blink 1s infinite; }
+.typing::after {
+  content: "|";
+  margin-left: 6px;
+  animation: blink 1s infinite;
+}
 
 @keyframes blink {
-  0%,50%{opacity:1;} 51%,100%{opacity:0;}
+  0%,50%{opacity:1;}
+  51%,100%{opacity:0;}
 }
 
-.hero-search {
-  margin-top: 26px;
-  width: 90%;
-  max-width: 420px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 12px;
-  position: relative;
+/* SEARCH */
+.search-wrap {
+  max-width: 520px;
+  margin: 10px auto 0;
+  display:flex;
+  background:#1a1233;
+  border-radius: 20px;
+  padding: 10px 14px;
+}
+.search-wrap input {
+  flex:1;
+  background:none;
+  border:none;
+  color:#fff;
+  outline:none;
 }
 
-.hero-search input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: #ddd;
-  outline: none;
-}
-
-.search-clear {
-  position: absolute;
-  right: 14px;
-  top: 12px;
-  cursor: pointer;
-  opacity: .5;
-}
-
-.search-results {
-  display: none;
-  position: absolute;
-  top: 110%;
-  width: 100%;
-  background: #0b0220;
-  border-radius: 14px;
-}
-
-.search-item {
-  display: flex;
-  gap: 10px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.search-item:hover { background: rgba(255,255,255,.05); }
-
-.search-item img {
-  width: 40px;
-  border-radius: 8px;
-}
-
+/* DIVIDER */
 .divider {
-  height: 4px;
-  margin: 40px auto;
-  width: 240px;
+  height:4px;
+  width:240px;
+  margin:40px auto;
   background: linear-gradient(90deg,#00eaff,#d400ff);
-  border-radius: 10px;
+  border-radius:10px;
 }
+@media(min-width:768px){ .divider{width:60vw;} }
 
-.section { text-align: center; padding: 20px; }
+/* SECTIONS */
+.section { padding:20px; text-align:center; max-width:1200px; margin:auto; }
 
-.cards { display: grid; gap: 20px; }
-
-@media(min-width:768px){
-  .cards{ grid-template-columns: repeat(2,1fr); }
-  .divider{ width:60vw; max-width:900px; }
-}
+.cards { display:grid; gap:20px; }
+@media(min-width:768px){ .cards{grid-template-columns:repeat(2,1fr);} }
 
 .card {
   background: rgba(20,10,50,0.8);
-  padding: 20px;
-  border-radius: 20px;
+  padding:20px;
+  border-radius:20px;
 }
 
 .buy {
-  background: linear-gradient(135deg,#8f00ff,#5b00c7);
-  color:#fff;
-  border:none;
+  margin-top:10px;
   padding:12px 20px;
-  border-radius:14px;
-  cursor:pointer;
+  border:none;
+  border-radius:20px;
+  background: linear-gradient(90deg,#00eaff,#d400ff);
+  color:#000;
+  font-weight:bold;
 }
 
+.product-img {
+  width:100%;
+  max-height:180px;
+  object-fit:contain;
+}
+
+/* FEATURES */
+.features { list-style:none; padding:0; }
+.features li {
+  padding-left:28px;
+  position:relative;
+}
+.features li::before {
+  content:"✔";
+  position:absolute;
+  left:0;
+  color:#00eaff;
+}
+
+/* FAQ */
 .faq-question {
   display:flex;
   justify-content:space-between;
-  align-items:center;
   cursor:pointer;
 }
+.faq-answer { display:none; }
 
-.faq-question span { margin-left:auto; }
+/* FOOTER */
+.footer { text-align:center; padding:20px; opacity:.6; }
 
-.footer { text-align:center; opacity:.6; }
-
-.product-img { width:100%; max-height:180px; object-fit:contain; }
-
-.features { list-style:none; padding:0; text-align:left; }
-.features li::before {
-  content:"✔";
-  margin-right:8px;
-  color:#00eaff;
-}
 
