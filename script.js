@@ -1,15 +1,14 @@
-const text = "AmytistShop";
-const speed = 120;
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
 
-const target = document.getElementById("typed-text");
-let index = 0;
+menuBtn.onclick = () => {
+  sideMenu.style.right =
+    sideMenu.style.right === "0px" ? "-220px" : "0px";
+};
 
-function typeEffect() {
-  if (index < text.length) {
-    target.textContent += text.charAt(index);
-    index++;
-    setTimeout(typeEffect, speed);
-  }
-}
-
-typeEffect();
+document.querySelectorAll(".faq-question").forEach(q => {
+  q.onclick = () => {
+    const ans = q.nextElementSibling;
+    ans.style.display = ans.style.display === "block" ? "none" : "block";
+  };
+});
