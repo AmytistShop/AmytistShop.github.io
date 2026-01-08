@@ -46,3 +46,24 @@ function type() {
 
 type();
 
+// SEARCH
+const searchBtn = document.getElementById("searchBtn");
+const searchBox = document.getElementById("searchBox");
+const searchInput = document.getElementById("searchInput");
+const productCards = document.querySelectorAll("#products .card");
+
+searchBtn.onclick = () => {
+  searchBox.style.display =
+    searchBox.style.display === "block" ? "none" : "block";
+  searchInput.focus();
+};
+
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value.toLowerCase();
+
+  productCards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(value) ? "block" : "none";
+  });
+});
+
