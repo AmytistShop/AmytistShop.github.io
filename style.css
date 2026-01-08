@@ -181,3 +181,14 @@ body {
       0 0 48px rgba(212,0,255,0.4);
   }
 }
+
+.fk-banner {
+  text-align: center;
+  margin: 6px auto;
+  opacity: 0.25; /* почти незаметно, но ВИДНО */
+}
+
+.fk-banner img {
+  width: 80px;   /* маленький */
+  height: auto;
+}
