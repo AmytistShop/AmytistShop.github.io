@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -36,6 +34,7 @@ body {
   background: #060014;
   padding: 80px 20px;
   transition: 0.3s;
+  z-index: 200;
 }
 
 .side-menu a {
@@ -47,13 +46,13 @@ body {
 
 /* HERO */
 .hero {
-  margin-top: 80px;
-  height: auto;
-  min-height: 240px;
-  display: flex;
-  flex-direction: column;
+  margin-top: 90px;
+  text-align: center;
+}
+
+.hero-title {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
 }
 
 .hero h1 {
@@ -62,7 +61,6 @@ body {
   background: linear-gradient(90deg,#00eaff,#d400ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: glow 2.5s ease-in-out infinite alternate;
 }
 
 .cursor {
@@ -75,15 +73,15 @@ body {
   51%,100% {opacity:0;}
 }
 
-/* ПОИСК ПОД AmytistShop */
+/* SEARCH */
 .hero-search {
-  position: relative;
-  margin-top: 28px;
+  margin: 25px auto 0;
   width: 90%;
   max-width: 420px;
   background: rgba(255,255,255,0.08);
   border-radius: 16px;
   padding: 12px 16px;
+  position: relative;
 }
 
 .hero-search input {
@@ -92,60 +90,34 @@ body {
   border: none;
   outline: none;
   color: #ddd;
-  font-size: 15px;
 }
 
-.hero-search input::placeholder {
-  color: rgba(255,255,255,0.45);
-}
-
-.hero-search .search-btn {
+.search-btn {
   position: absolute;
-  right: 16px;
+  right: 14px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  opacity: 0.6;
-}
-
-.hero-search .search-btn:hover {
-  opacity: 1;
 }
 
 .search-results {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  width: 100%;
+  display: none;
+  margin-top: 10px;
   background: #070014;
   border-radius: 14px;
-  overflow: hidden;
-  display: none;
-  z-index: 50;
 }
 
 .search-item {
+  padding: 10px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
+  gap: 10px;
   cursor: pointer;
 }
 
-.search-item:hover {
-  background: rgba(255,255,255,0.06);
-}
-
 .search-item img {
-  width: 42px;
-  height: 42px;
-  object-fit: cover;
+  width: 40px;
   border-radius: 8px;
-}
-
-.search-item span {
-  font-size: 14px;
-  color: #ddd;
 }
 
 /* DIVIDER */
@@ -178,9 +150,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .cards { grid-template-columns: repeat(2, 1fr); }
 }
 
 .card {
@@ -189,68 +159,29 @@ body {
   border-radius: 20px;
 }
 
-.price {
-  font-size: 22px;
-  color: #9b7cff;
-}
-
-.buy {
-  padding: 12px 20px;
-  border-radius: 20px;
-  border: none;
-  background: linear-gradient(90deg,#00eaff,#d400ff);
-  font-weight: bold;
-}
-
-/* КАРТИНКА ТОВАРА */
 .product-img {
   width: 100%;
   max-height: 180px;
   object-fit: contain;
-  margin-bottom: 12px;
   border-radius: 12px;
 }
 
-/* FEATURES (галочки) */
 .features {
   list-style: none;
   padding: 0;
-  margin: 14px 0;
   text-align: left;
 }
 
 .features li {
+  padding-left: 26px;
   position: relative;
-  padding-left: 30px;
-  margin-bottom: 10px;
-  color: #ddd;
-  opacity: 0;
-  animation: featureFade 0.8s ease forwards;
 }
-
-.features li:nth-child(1) { animation-delay: 0.2s; }
-.features li:nth-child(2) { animation-delay: 0.5s; }
-.features li:nth-child(3) { animation-delay: 0.8s; }
 
 .features li::before {
   content: "✔";
   position: absolute;
   left: 0;
-  top: 0;
   color: #00eaff;
-  text-shadow: 0 0 6px rgba(0,234,255,0.6);
-  animation: checkSlowPulse 3.5s ease-in-out infinite;
-}
-
-@keyframes featureFade {
-  from { opacity: 0; transform: translateX(-6px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes checkSlowPulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.15); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.7; }
 }
 
 /* FAQ */
@@ -261,17 +192,7 @@ body {
   padding: 15px;
 }
 
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.faq-answer {
-  display: none;
-  margin-top: 10px;
-  color: #bbb;
-}
+.faq-answer { display: none; }
 
 /* FOOTER */
 .footer {
@@ -280,23 +201,9 @@ body {
   opacity: 0.6;
 }
 
-/* GLOW */
-@keyframes glow {
-  from { text-shadow: 0 0 8px rgba(0,234,255,0.4); }
-  to {
-    text-shadow:
-      0 0 16px rgba(0,234,255,0.8),
-      0 0 32px rgba(212,0,255,0.6);
-  }
-}
-
 /* FreeKassa */
 .fk-banner {
   text-align: center;
-  margin: 6px auto;
   opacity: 0.25;
 }
 
-.fk-banner img {
-  width: 80px;
-}
