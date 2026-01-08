@@ -1,15 +1,15 @@
-const reveals = document.querySelectorAll(".reveal");
+const text = "AmytistShop";
+const speed = 120;
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target); // 🔥 больше не отслеживаем
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
+const target = document.getElementById("typed-text");
+let index = 0;
 
-reveals.forEach(el => observer.observe(el));
+function typeEffect() {
+  if (index < text.length) {
+    target.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, speed);
+  }
+}
+
+typeEffect();
