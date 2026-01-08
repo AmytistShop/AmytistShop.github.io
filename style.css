@@ -242,4 +242,29 @@ body {
   }
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.search-btn {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.search-box {
+  display: none;
+  padding: 10px 20px;
+  background: rgba(5,0,20,0.9);
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
 
