@@ -76,7 +76,7 @@ body {
 .divider {
   height: 4px;
   margin: 40px auto;
-  width: 120px;
+  width: 240px;
   background: linear-gradient(90deg,#00eaff,#d400ff);
   border-radius: 10px;
 }
@@ -145,3 +145,4 @@ body {
   padding: 20px;
   opacity: 0.6;
 }
+
