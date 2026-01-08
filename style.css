@@ -61,7 +61,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* НЕОНОВОЕ СВЕЧЕНИЕ */
   text-shadow:
     0 0 10px rgba(0,234,255,0.6),
     0 0 20px rgba(212,0,255,0.4),
@@ -76,23 +75,34 @@ body {
 }
 
 @keyframes blink {
-  0%,50% {opacity:1;}
-  51%,100% {opacity:0;}
+  0%,50% { opacity: 1; }
+  51%,100% { opacity: 0; }
 }
 
-@media (min-width: 768px) {
-  .divider {
-    width: 480px; /* ПК */
-  }
-}
+/* ===================== */
+/* DIVIDER — ИСПРАВЛЕНО */
+/* ===================== */
 
-/* DIVIDER */
 .divider {
   height: 4px;
   margin: 40px auto;
-  width: 240px;
+  width: 240px; /* телефон */
   background: linear-gradient(90deg,#00eaff,#d400ff);
   border-radius: 10px;
+}
+
+/* ПК */
+@media (min-width: 768px) {
+  .divider {
+    width: 480px;
+  }
+}
+
+/* большие экраны */
+@media (min-width: 1400px) {
+  .divider {
+    width: 640px;
+  }
 }
 
 /* SECTIONS */
@@ -160,6 +170,7 @@ body {
   opacity: 0.6;
 }
 
+/* GLOW ANIMATION */
 @keyframes glow {
   from {
     text-shadow:
@@ -173,11 +184,3 @@ body {
       0 0 48px rgba(212,0,255,0.4);
   }
 }
-
-@media (min-width: 1400px) {
-  .divider {
-    width: 640px; /* ПК */
-  }
-}
-
-
