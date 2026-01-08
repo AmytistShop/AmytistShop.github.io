@@ -12,10 +12,14 @@ document.querySelectorAll(".faq-question").forEach(q => {
   q.onclick = () => {
     const ans = q.nextElementSibling;
     const icon = q.querySelector("span");
-    const open = ans.style.display === "block";
 
-    ans.style.display = open ? "none" : "block";
-    icon.textContent = open ? "➕" : "➖";
+    if (ans.style.display === "block") {
+      ans.style.display = "none";
+      icon.textContent = "➕";
+    } else {
+      ans.style.display = "block";
+      icon.textContent = "➖";
+    }
   };
 });
 
